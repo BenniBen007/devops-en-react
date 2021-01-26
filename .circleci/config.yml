@@ -31,6 +31,12 @@ jobs:
       - run:
           name: run build
           command: npm run build
+      - run:
+          name: install AZ CLI
+          command: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+      - run:
+          name: config account
+          command: az login -u $$ -p <password>
 
 workflows:
   # Below is the definition of your workflow.
